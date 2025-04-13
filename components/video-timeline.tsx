@@ -114,7 +114,7 @@ export function VideoTimeline({ videoUrl, trimRange, onTrimChange }: VideoTimeli
     canvas.height = 90
 
     const thumbnailCount = 10
-    const thumbnailsArray = []
+    const thumbnailsArray: string[] = []
 
     for (let i = 0; i < thumbnailCount; i++) {
       const time = (video.duration / thumbnailCount) * i
