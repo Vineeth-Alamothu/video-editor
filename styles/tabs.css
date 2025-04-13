@@ -1,0 +1,34 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs-list {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.tabs-trigger {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tabs-trigger[data-state="active"] {
+  color: var(--foreground);
+  border-bottom-color: var(--primary);
+}
+
+.tabs-content {
+  display: none;
+}
+
+.tabs-content[data-state="active"] {
+  display: block;
+}
