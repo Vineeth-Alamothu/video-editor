@@ -105,7 +105,7 @@ export async function processVideoInMainThread(
           try {
             recorder = new MediaRecorder(canvas.captureStream(frameRate))
           } catch (e2) {
-            reject(new Error(`Could not create MediaRecorder: ${e2.message}`))
+            reject(new Error(`Could not create MediaRecorder: ${e2 instanceof Error ? e2.message : String(e2)}`))
             return
           }
         }
@@ -155,7 +155,7 @@ export async function processVideoInMainThread(
             recordingStarted = true
             console.log("Recording started")
           } catch (e) {
-            reject(new Error(`Could not start recording: ${e.message}`))
+            reject(new Error(`Could not start recording: ${e instanceof Error ? e.message : String(e)}`))
             return
           }
 
