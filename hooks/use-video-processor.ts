@@ -142,7 +142,8 @@ export function useVideoProcessor(): VideoProcessorState {
         setProcessingStatus("Processing complete!")
       } catch (error) {
         console.error("Error in main thread processing:", error)
-        alert(`Error processing video: ${error.message || "Unknown error"}`)
+        const errorMessage = error instanceof Error ? error.message : "Unknown error"
+        alert(`Error processing video: ${errorMessage}`)
       } finally {
         setIsProcessing(false)
       }
